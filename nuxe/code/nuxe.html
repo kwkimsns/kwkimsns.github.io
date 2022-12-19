@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프랑스 내츄럴 테라피 브랜드, 눅스</title>
+
+    <link rel="stylesheet" href="../CSS/reset.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/nuxe_pc.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/nuxe_mo.css" type="text/css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <script src="../js/jquery-3.6.1.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+
+
+            var ww = $(window).width();
+
+
+            
+
+                // 슬라이드 메뉴 이벤트
+                $('#menu_btn').click(function(){
+
+                    $('#menu_wrap').animate({
+                            width : 300,
+                    },500);
+
+                });
+
+                $('#menu_wrap').click(function(){
+
+                    $('#menu_wrap').animate({
+                        width : 0,
+                    });
+                });
+
+
+
+
+
+                var i = 0;
+
+
+                // sec02 슬라이드 이벤트
+
+                var sec02_con_ww = $('.sec02_con').width();
+                var sec02_text_ww = $('.sec02_text').width();
+
+
+                $('#sec02_i').click(function(){
+
+                    i++;
+
+                    if( i > 1 ){
+                        i = 0;
+                    }
+
+                    $('#sec02_img_wrap').animate({
+                        left : -sec02_con_Ww * i,
+                    });
+
+
+                    $('#sec02_text_wrap').animate({
+                        left : -sec02_text_ww * i,
+                    });
+                    
+                });
+
+                
+                var setin = setInterval(function(){
+                    $('#sec02_i').trigger('click');
+                },2000);
+            
+
+                
+
+                $('#sec02 .container').hover(function(){
+
+                    clearInterval(setin);
+
+                },function(){
+
+                    i++;
+
+                    if( i > 1 ){
+                        i = 0;
+                    }
+
+                    $('#sec02_img_wrap').animate({
+                        left : -sec02_con_ww * i,
+                    },1000);
+
+
+                    $('#sec02_text_wrap').animate({
+                        left : -sec02_text_ww * i,
+                    },1000);
+                    
+
+                });
+
+
+
+                // bestseller slide
+
+                var a = 0;
+
+                function sec03 (){
+
+                    si = setInterval(function(){
+
+                        $('#sec03_img_wrap').animate({
+                            left : -450,
+                        },3000,function(){
+                            $('#sec03_img_wrap').css({
+                                left : 0, 
+                            }).find('.sec03_con').first().appendTo('#sec03_img_wrap');
+                        });
+
+                    },3000);
+                }
+
+                sec03();
+
+
+                $('#sec03_img_wrap').hover(function(){
+
+                    clearInterval(si);
+
+                },function(){
+
+                    sec03();
+
+                });
+
+            
+
+
+                //스크롤 시 이미지가 올라오는 속도가 너무 느림
+                // sec04 스크롤 이벤트
+                // $(window).scroll(function(){
+    
+
+                //     sct = $(window).scrollTop();
+                //     ww = $(window).width();
+
+                //     // console.log(sct);
+
+
+
+                //     if ( sct > 2530 && sct < 3420 && ww > 760 ){
+
+                //         $('#sec04_lip').stop().animate({
+                //             opacity : 1,
+                //             top : 50,
+                //         },500);
+
+                //     }else if( sct > 3430 && ww > 760 ){
+
+                //         $('#veryrose_oil').stop().animate({
+                //             top : 50,
+                //             opacity : 1,
+                //         },500);
+                //     }
+                        
+                    
+
+
+                // });
+
+
+            
+                // mobile gift set silde
+
+                $('#right').click(function(){
+
+                    sec05_w = $('.sec05_con').width();
+
+                    if( ww <= 760 ){
+
+                        $('#sec05_con_wrap').animate({
+                            left : -sec05_w,
+                        },1000,function(){
+                            $(this).css({
+                                left : 0,
+                            }).find('.sec05_con').first().appendTo('#sec05_con_wrap');
+                        });
+
+                    }
+                });
+
+                
+                setInterval(function(){
+                    $('#right').trigger('click');
+                },3000);
+
+
+        });//end
+
+
+    </script>
+
+</head>
+<body>
+
+    <div id="wrap">
+
+
+        <!-- header -->
+        <header>
+
+            <div id="in_header">
+
+                <div id="logo"><a href="#"></a></div>
+
+                <div id="shop"><a href="#">SHOP</a></div>
+
+                <!-- menu_btn -->
+                <input type="checkbox" id="menu_btn">
+                <label for="menu_btn" id="menu_label">
+                    <img src="../img01/menu_line.png" alt="button">
+                </label>
+
+                <!-- menu -->
+                <ul id="menu_wrap">
+                    
+                    <li id="menu_logo"><a href="#"></a></li>
+                    
+                    <li class="sub_title">SHOP
+                        <ul id="sub_wrap_shop">
+                            <li><a href="#"><p>BEST SELLER</p></a></li>
+                            <li><a href="#"><p>SKIN CARE</p></a></li>
+                            <li><a href="#"><p>BODY & HAIRCARE</p></a></li>
+                            <li><a href="#"><p>RANGES</p></a></li>
+                            <li><a href="#"><p>GIFT & SETS</p></a></li>
+                            <li><a href="#"><p>OFFERS</p></a></li>
+                            <li><a href="#"><p>ABOUT NUXE</p></a></li>
+                        </ul>
+                    </li>
+                
+                    <li class="sub_title">COMMUNITY
+                         <ul id="sub_wrap_community">
+                            <li><a href="#"><p>NOTICE</p></a></li>
+                            <li><a href="#"><p>Q&A</p></a></li>
+                            <li><a href="#"><p>EVENT</p></a></li>
+                            <li><a href="#"><p>FAQ</p></a></li>
+                            <li><a href="#"><p>MEMBERSHIP</p></a></li>
+                         </ul>   
+                    </li>
+                </ul>
+
+
+                <!-- side menu -->
+                <div id="side_menu">
+
+                    <div class="head_icon">
+                        <a href="#">
+                            <img src="../img01/head_icon01.png" alt="login">
+                        </a>
+                    </div>
+
+                    <div class="head_icon">
+                        <a href="#">
+                            <img src="../img01/head_icon02.png" alt="search">
+                        </a>
+                    </div>
+
+                    <div class="head_icon">
+                        <a href="#">
+                            <img src="../img01/head_icon03.png" alt="cart">
+                        </a>
+                    </div>
+
+                </div>
+        
+
+                <!-- top button -->
+                <div id="top_btn"><a href="#">TOP</a></div>
+
+            </div>
+
+        </header>
+
+
+        <!-- section01 -->
+        <section id="sec01"></section>
+
+
+
+        <!-- section02 -->
+        <section id="sec02">
+
+            <div class="container">
+
+                <!-- section02 left img -->
+                <div class="sec02_left">
+
+                    <div id="sec02_img_wrap">
+                        <div class="sec02_con"><img src="../img01/sec02_img01.jpg" alt="윌프로비쥬오일"></div>
+                        <div class="sec02_con"><img src="../img01/sec02_img02.jpg" alt="윌프로비쥬오일"></div>
+                    </div>
+
+                </div>
+
+                <!-- section02 right text -->
+                <div class="sec02_right">
+
+                    <div id="sec02_text_wrap">
+
+                        <div class="sec02_text sec02_t1">
+
+                            <h6>Huile Prodigieuse Multi-Putpose Dr Oil</h6>
+                            <h1>프랑스 No.1 오일<br/>
+                                세상 모든 드라이 오일의 시작 </h1>
+                            <h3>#97% 자연유래성분 #합성오일 무첨가</h3>
+                            <p>토너, 세럼, 크림의 영양을 한 병에! <br/>
+                                97% 자연유래성분으로 안전하고<br/>
+                                사용 시 끈적임 없이 마무리되는 드라이 오일 </p>
+
+                            <!-- mobile arrow -->
+                            <div class="sec02_mo_arrow">
+                               <a href="#"> <img src="../img01/mo_arrow.png" alt="arrow"></a>
+                            </div>
+
+                        </div>
+
+
+                        <div class="sec02_text sec02_t2">
+
+                            <h6>Reve de Miel Ultra-Nourshing Lip Balm</h6>
+                            <h1>프랑스 소비자 평가 사이트 <br/>
+                                8년 연속 1위!!  </h1>
+                            <h3>#진정/보호 # 시어버터 #강력한 영양</h3>
+                            <p>시어버터로 자극받아 연약해진 입술을 <br/>
+                                빠르게 진정시키고 오랜시간 보호<br/>
+                                캐나다 극한 지역에서 보습 효능, 효과 테스트 완료. </p>
+
+                            <!-- mobile arrow -->
+                            <div class="sec02_mo_arrow">
+                                <a href="#"> <img src="../img01/mo_arrow.png" alt="arrow"></a>
+                            </div>
+ 
+
+                        </div>
+
+                    </div>                    
+
+                    <div id="sec02_i">
+                        <img src="../img01/arrow.png" alt="arrow">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- section03 -->
+        <section id="sec03">
+
+            <div class="container" id="sec03_container">
+
+                <!-- section03 text -->
+
+                <div id="sec03_left_fixed">
+                    <div class="sec03_con">
+                        <div id="sec03_title">
+                            <h1>BEST SELLER</h1>
+                            <P>NUXE의 인기제품들을 만나보세요</P>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- section03 img -->
+
+                <div id="sec03_right_move">
+
+                    <div id="sec03_img_wrap">
+
+                        <div class="sec03_con">
+                            <div class="img_box sec03_img01">
+                                <img src="../img01/sec03_img01.png" alt="오일">
+                            </div>
+                            
+                            <p>윌 프로디쥬스 멀티 라이 오일 100ml</p>
+
+                        </div>
+
+                        <div class="sec03_con">
+                            <div class="img_box">
+                                <img src="../img01/sec03_img02.png" alt="크림">
+                            </div>
+                            
+                            <p>크렘프레쉬 리치 크림 (건성용) 50ml  </p>
+                        </div>
+
+                        <div class="sec03_con">
+                            <div class="img_box">
+                                <img src="../img01/sec03_img03.png" alt="오일">
+                            </div>
+                            
+                            <p>베리로즈 미셀라 클렌징 오일 150ml</p>
+                        </div> 
+
+                        <div class="sec03_con">
+                            <div class="img_box">
+                                <img src="../img01/sec03_img04.png" alt="립밤">
+                            </div>
+                            
+                            <p>레브 드 미엘 허니 립밤 15ml</p>
+                        </div>
+                    
+                        <div class="sec03_con">
+                            <div class="img_box">
+                                <img src="../img01/sec03_img05.png" alt="클렌져">
+                            </div>
+                            
+                            <p>아쿠아벨라 젤 클렌저 150ml</p>
+                        </div>
+                       
+                        <div class="sec03_con">
+                            <div class="img_box">
+                                <img src="../img01/sec03_img06.png" alt="세럼">
+                            </div>
+                            
+                            <p>비오 안티옥시덴트 세럼 30ml</p>
+                        </div>
+                        
+                        <div class="sec03_con">
+                            <div class="img_box">
+                                <img src="../img01/sec03_img07.png" alt="오일">
+                            </div>
+                            
+                            <p>윌 프로디쥬스 멀티 플로럴 오일 100ml</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div id="sec03_line_frame">
+                    <div id="sec03_line_wrap">
+    
+                        <div class="sec03_line sec03_line01"></div>
+                        <div class="sec03_line sec03_line02"></div>
+                        <div class="sec03_line sec03_line03"></div>
+                        <div class="sec03_line sec03_line04"></div>
+                        <div class="sec03_line sec03_line05"></div>
+                        <div class="sec03_line sec03_line06"></div>
+                        <div class="sec03_line sec03_line07"></div>
+                        <div class="sec03_line sec03_line08"></div>
+                
+                    </div>
+                </div> -->
+
+                
+            </div>
+
+        </section>
+
+
+
+
+        <!-- section04 -->
+        <section id="sec04">
+
+            <div class="container">
+
+                <!-- section04 top -->
+                <div class="sec04_con_wrap" id="sec04_top">
+
+                    <div class="sec04_text" id="sec04_lip" data-aos="fade-up"
+                    data-aos-duration="3000">
+                        <a href="#임시링크">
+
+                            <h2>리얼 꿀이 들어간 립밤</h2>
+                            <p>레브 드 미엘</p>
+                            <div class="sec04_con">
+                                <img src="../img01/sec04_img01_rz.png" alt="lip balm">
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="sec04_imgbox">
+                        <img src="../img01/sec04_img02_new.jpg" alt="레브 드 미엘">
+                    </div>
+
+                </div>
+
+
+                <!-- section04 bottom -->
+                <div class="sec04_con_wrap" id="sec04_bottom">
+
+                    <div class="sec04_imgbox veryrose">
+                        <img src="../img01/sec04_img03.jpg" alt="very rose" >
+                    </div>
+
+                    <div class="sec04_text" id="veryrose_oil" data-aos="fade-up"
+                    data-aos-duration="3000">
+                        <a href="#임시링크">
+                            <h2>저자극 클렌징 라인</h2>
+                            <p>베리로즈</p>
+                            <div class="sec04_con">
+                                <img src="../img01/sec04_img04.png" alt="cleansing water">
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- section05 -->
+        <section id="sec05">
+
+            <div class="container" id="sec05_container">
+
+                <!-- section05 text -->
+                <div id="sec05_title">
+
+                    <h2>ICONIC GIFT SETS</h2>
+                    <P>눅스 선물세트로 마음을 전하세요</P>
+
+                </div>
+                
+                <!-- section05 img -->
+                <div id="sec05_con_wrap">
+
+                    <div class="sec05_con"><a href="#">
+                        <img src="../img01/sec05_img01.png" alt="set01">
+                        </a>
+                    </div>
+
+                    <div class="sec05_con"><a href="#">
+                        <img src="../img01/sec05_img02.png" alt="set02">
+                        </a>
+                    </div>
+
+                    <div class="sec05_con"><a href="#">
+                        <img src="../img01/sec05_img03.png" alt="set03">
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div id="right"></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- section06 -->
+        <section id="sec06">
+
+            <div class="container">
+                 
+
+                <div class="sec06_con_wrap">
+
+                    <h2>REVIEW</h2>
+
+                    <div id="review_wrap">
+
+                        <div class="sec06_textbox">
+
+                            <div class="star">
+                                <img src="../img01/star.png" alt="star">
+                            </div>
+                            
+                            <div class="review_box">
+                                <h5>베리로즈 미셀라 클렌징 오일</h5>
+                                <p>이런 질감은 처음이예요!
+                                    야근에 격무에 피곤한 일상인데 제 안색은 <br/>
+                                    힘든 내색을 않는 거 보면 제품이 참 효자템인거 같아요</p>
+                                <h6>정**현 님</h6>
+                            </div>
+
+                        </div>
+                        
+                        <div class="sec06_textbox">
+                            <div class="star">
+                                <img src="../img01/star.png" alt="star">
+                            </div>
+                            
+                            <div class="review_box">
+                                <h5>윌 프로디쥬스 멀티 드라이 오일</h5>
+                                <p> 제품 사용하기 전엔 얼굴에 오일을 바르는 것이 부담스럽게 느껴졌는데 <br/>
+                                    사용해보니 정말 세상에 없는 텍스쳐가 맞네요 ㅎㅎ </p>
+                                <h6>김**지 님</h6>
+                            </div>
+                        </div>
+
+                        <div class="sec06_textbox">
+                            <div class="star">
+                                <img src="../img01/star.png" alt="star">
+                            </div>
+                            
+                            <div class="review_box">
+                                <h5>레브 드 미엘 허니 립밤</h5>
+                                <p> 보습 최고 꿀 립밤!!
+                                    입술이 정말 정말 건조한 타입인데, 꿀성분이 있어서<br/>
+                                    그런지 자기 전에 바르고 자면 다음날 각질도 정돈되고 너무 좋아요.</p>
+                                <h6>이**정 님</h6>
+                            </div>
+                        </div>
+
+                        <div class="sec06_textbox">
+                            <div class="star">
+                                <img src="../img01/star.png" alt="star">
+                            </div>
+                            
+                            <div class="review_box">
+                                <h5>크렘프레쉬 크림(중성용)</h5>
+                                <p>민감함 피부의 자극을 진정시켜주고,
+                                    완화시켜줘서 애용하는 제품입니다.<br/>
+                                    향도 은은하고 너무 좋아요 ~</p>
+                                <h6>신**용 님</h6>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- footer -->
+        <footer>
+
+            <div class="container">
+                 
+                <div id="in_footer">
+
+                    <!-- footer left -->
+                    <div id="foot_left">
+
+                        <div id="foot_logo"><a href="#"></a></div>
+                        <div id="foot_copyright">
+                            <p>COPYEIGHT(C) © 2014 NUXE INC. ALL RIGHTS RESERVED.<br/>
+                                (주)케이엔유 <br/>
+                                대표 : 박희원 <br/>
+                                사업자 등록번호 : 214-86-33536 <br/>
+                                주소 : 서울특별시 강남구 영동대로 86길 12 동남유화빌딩 2층 눅스코리아
+                            </p>
+                            <h3>고객상담실 : <span>080-400-0852</span></h3>
+                        </div>
+
+                    </div>
+
+                    
+                    <!-- footer right -->
+                    <div id="footer_right">
+
+                        <!-- icon wrap -->
+                        <div id="foot_icon_wrap">
+
+                            <div class="foot_icon">
+                                <a href="#"> <img src="../img01/foot_icon01.png" alt="유튜브"></a>
+                            </div>
+
+                            <div class="foot_icon">
+                                <a href="#"><img src="../img01/foot_icon04.png" alt="인스타그램"></a>
+                            </div>
+
+                            <div class="foot_icon">
+                                <a href="#"><img src="../img01/foot_icon03.png" alt="카카오톡"></a>
+                            </div>
+
+                        </div>
+
+
+                        <!-- text wrap -->
+                        <div id="text_wrap">
+                            <p>
+                                Shop <br/>
+                                My Account <br/>
+                                FAQ <br/>
+                                Agreement <br/>
+                                Privacy <br/>
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+
+    
+
+    </div>
+
+    
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+</html>
